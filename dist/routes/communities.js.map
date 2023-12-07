@@ -1,0 +1,1 @@
+{"version":3,"file":"communities.js","sourceRoot":"","sources":["../../src/routes/communities.ts"],"names":[],"mappings":";;AAAA,qCAAiC;AACjC,4EAI4C;AAE5C,MAAM,MAAM,GAAG,IAAA,gBAAM,GAAE,CAAC;AAExB,MAAM,CAAC,GAAG,CAAC,QAAQ,EAAE,4CAAsB,CAAC,CAAC;AAC7C,MAAM,CAAC,IAAI,CAAC,SAAS,EAAE,6CAAuB,CAAC,CAAC;AAChD,MAAM,CAAC,GAAG,CAAC,OAAO,EAAE,yCAAmB,CAAC,CAAC;AAEzC,kBAAe,MAAM,CAAC"}
