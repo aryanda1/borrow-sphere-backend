@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import connectToDb from "./config/dbConn";
 
 // Middleware
+import cors from "cors";
 import corsOptions from "./config/cors";
 import cookieParser from "cookie-parser";
 import jwtAuth from "./middleware/jwtAuth";
@@ -21,22 +22,7 @@ const PORT = process.env.PORT || 4000;
 config();
 connectToDb();
 
-// Replace app.use(cors(corsOptions)); with custom CORS middleware
-app.use((req, res, next) => {
-	let origin = req.headers.origin;
-	console.log(origin);
-	console.log(corsOptions.origin);
-	console.log(corsOptions.origin.includes(origin));
-	if (corsOptions.origin.includes(origin)) {
-		res.header("Access-Control-Allow-Origin", origin);
-		res.header("Access-Control-Allow-Credentials", true); // Set credentials header
-	}
-	res.header(
-		"Access-Control-Allow-Headers",
-		"Origin, X-Requested-With, Content-Type, Accept"
-	);
-	next();
-});
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 
