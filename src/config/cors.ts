@@ -5,13 +5,7 @@ const whiteList = [
     'https://borrow-sphere.ary0n.fun',
 ];
 const corsOptions: CorsOptions = {
-	origin: function (origin, callback) {
-		if ((origin && whiteList.indexOf(origin) !== -1) || !origin) {
-			callback(null, true);
-		} else {
-			callback(new Error("Not allowed by CORS"));
-		}
-	},
+	origin: whiteList,
 	credentials: true, // This is important for requests with credentials
 };
 
