@@ -1,11 +1,9 @@
 import { CorsOptions } from "cors";
 
 const whiteList = [
-	'https://borrow-sphere-client.vercel.app',
-	'https://borrow-sphere-client.vercel.app/*',
-	"https://borrow-sphere.ary0n.fun",
-	"https://borrow-sphere.ary0n.fun/*"
-  ];
+    'https://borrow-sphere-client.vercel.app',
+    'https://borrow-sphere.ary0n.fun',
+];
 const corsOptions: CorsOptions = {
 	origin: function (origin, callback) {
 		if ((origin && whiteList.indexOf(origin) !== -1) || !origin) {
