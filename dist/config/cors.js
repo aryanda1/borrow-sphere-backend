@@ -1,6 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const whiteList = ["http://localhost:3000"];
+const whiteList = [
+    'https://borrow-sphere-client.vercel.app',
+    'https://borrow-sphere-client.vercel.app/*',
+];
 const corsOptions = {
     origin: function (origin, callback) {
         if ((origin && whiteList.indexOf(origin) !== -1) || !origin) {
