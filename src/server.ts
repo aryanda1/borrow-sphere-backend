@@ -29,7 +29,6 @@ app.use(
 			"https://borrow-sphere.ary0n.fun",
 			"https://borrow-sphere-client.vercel.app",
 		],
-		credentials: true,
 	})
 );
 app.use(express.json());
