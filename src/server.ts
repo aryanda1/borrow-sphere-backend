@@ -22,7 +22,16 @@ const PORT = process.env.PORT || 4000;
 config();
 connectToDb();
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(
+	cors({
+		origin: [
+			"https://borrow-sphere.ary0n.fun",
+			"https://borrow-sphere-client.vercel.app",
+		],
+		credentials: true,
+	})
+);
 app.use(express.json());
 app.use(cookieParser());
 
