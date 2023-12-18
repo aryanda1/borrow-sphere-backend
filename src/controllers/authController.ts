@@ -63,6 +63,7 @@ const handleRegistration = async (req: Request, res: Response) => {
 			httpOnly: true,
 			sameSite: "none",
 			secure: true,
+			maxAge: 30 * 24 * 60 * 60 * 1000, 
 		});
 		return res.status(201).json({
 			message: "Registration successful for " + registerUsername + "!",
@@ -121,6 +122,7 @@ const handleLogin = async (req: Request, res: Response) => {
 			httpOnly: true,
 			sameSite: "none",
 			secure: true,
+			maxAge: 30 * 24 * 60 * 60 * 1000, 
 		});
 		return res.status(200).json({
 			message: "Sign in successful",
