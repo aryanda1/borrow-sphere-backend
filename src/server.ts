@@ -29,7 +29,7 @@ app.use(
 			"https://borrow-sphere.ary0n.fun",
 			"https://borrow-sphere-client.vercel.app",
 		],
-		methods: "*",
+		methods: ["POST","GET","PUT","OPTIONS"],
 		allowedHeaders: ["Content-Type", "Authorization"],
 		credentials: true,
 	})
