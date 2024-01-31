@@ -40,6 +40,7 @@ app.use((req, res, next) => {
 			"https://borrow-sphere.ary0n.fun",
 			"https://borrow-sphere-client.vercel.app",
 	  		"https://quick-lend.vercel.app",
+	  "https://quick-lend-client.vercel.app"
 		];
   const origin = req.headers.origin;
 
