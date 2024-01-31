@@ -23,41 +23,22 @@ config();
 connectToDb();
 
 // app.use(cors(corsOptions));
-// app.use(
-// 	cors({
-// 		origin: [
-// 			"https://borrow-sphere.ary0n.fun",
-// 			"https://borrow-sphere-client.vercel.app",
-// 		],
-// 		methods: ["POST","GET","PUT","OPTIONS"],
-// 		allowedHeaders: ["Content-Type", "Authorization"],
-// 		credentials: true,
-// 	})
-// );
-
 app.use((req, res, next) => {
-  const allowedOrigins = [
-			"https://borrow-sphere.ary0n.fun",
-			"https://borrow-sphere-client.vercel.app",
-	  		"https://quick-lend.vercel.app",
-	  "https://quick-lend-client.vercel.app"
-		];
-  const origin = req.headers.origin;
+	const allowedOrigins = [
+		"https://borrow-sphere.ary0n.fun",
+		"https://borrow-sphere-client.vercel.app",
+	];
+	const origin = req.headers.origin;
 
-  console.log(origin, req.headers);
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader("Access-Control-Allow-Origin", origin);
-  }
+	console.log(origin, req.headers);
+	if (origin && allowedOrigins.includes(origin)) {
+		res.setHeader("Access-Control-Allow-Origin", origin);
+	}
 
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.setHeader("Access-Control-Allow-Credentials", "true"); // Set credentials to true
-	 if(req.method === 'OPTIONS') {
-        return res.status(200).json(({
-            body: "OK"
-        }))
-    }
-  next();
+	res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+	res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+	res.setHeader("Access-Control-Allow-Credentials", "true"); // Set credentials to true
+	next();
 });
 
 app.use(express.json());
